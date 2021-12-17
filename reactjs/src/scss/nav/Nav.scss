@@ -1,0 +1,168 @@
+@import '../config';
+
+$lines: (
+   1: '20%',
+   2: '50%',
+   3: '80%'
+);
+
+.main-nav{
+   @include flex-sa-c;
+   height:70px;
+   position: relative;
+
+   article{
+      position: absolute;
+      background: rgb(249, 254, 255);
+      width:300px;
+      border: 2px solid $lightBlue-clr;
+      right:0;
+      bottom:0;
+      transform:translateY(100%) translateX(100%);
+      transition:1s;
+      padding-bottom: .4em;
+      border-radius: .5em 0 0 .5em;
+      z-index: 99999;
+
+      ol{
+         list-style: none;
+
+         a{
+            display: block;
+            padding: 1em 0;
+            color: $darkSoft-clr;
+            text-decoration: none;
+            @include flex-c-c;
+            position: relative;  
+            transition: .3s;
+
+            &:first-child{
+               border-radius: .5em 0 0 0;
+               background: rgb(240, 240, 240);
+
+               li{ font-weight: 700; }
+            }
+
+            &:last-child{
+               color:rgb(236, 15, 15);
+               
+               li{ font-weight: 700; }
+            }
+
+            &:hover{
+               background: rgb(240, 240, 240);
+            }
+         }
+      }
+
+      p{
+         text-align: center;
+         color:brown;
+         font-size: .8rem;
+         margin-top: .5em;
+      }
+
+      svg{
+         width:25px;
+         height:25px;
+         position: absolute;
+         left:2%;
+      }
+   }
+
+   ul{
+      @include flex-c-c;
+      list-style: none;
+
+      li{
+         margin:0 1em;
+         a{
+            text-decoration: none;
+            color:black;
+            transition: .4s;
+            font-weight: 400;
+            font-size: clamp(.8rem,2vw,1rem);
+
+            &:hover{
+               color: $lightBlue-clr;
+            }
+         }
+      }   
+   }
+
+   section{
+      &.nav-logo{
+         height:100%;
+
+         img{
+            height:100%;
+            width: 100%;
+         }
+      }
+
+      &.nav-icons{
+         @include flex-sa-c;
+
+         svg{
+            width: clamp(25px,3vw,35px);
+            height: clamp(25px,3vw,35px);
+            margin:0 .5em;
+            color:$darkSoft-clr;
+            cursor: pointer;
+            transition: .4s;
+
+            &:hover{
+               color:rgb(120, 120, 120);
+            }
+         }
+
+         div{
+            width: clamp(25px,3vw,35px);
+            height: clamp(25px,3vw,35px);
+            margin:0 0 0 .5em;
+            position: relative;
+            cursor: pointer;
+
+            span{
+               position: absolute;
+               border:1.2px solid $darkSoft-clr;
+               width: 90%;
+               left:50%; transform: translateX(-50%);
+               background: $darkSoft-clr;
+               pointer-events: none;
+               transition: .8s;
+
+               @each $num, $item in $lines{
+                  &:nth-child(#{$num}){
+                     top: #{$item};
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@media (max-width: 768px){
+   .main-nav{
+      section{
+         &.nav-logo{
+            display: none;
+         }
+      }
+   }
+}
+
+@media (max-width: 480px){
+   .main-nav{
+      ul{
+         li{
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4){
+               display: none;
+            }
+         }
+      }
+   }
+} 

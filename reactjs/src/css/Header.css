@@ -1,0 +1,84 @@
+/**
+* FUNCTIONS
+*/
+/**
+* COLORS
+*/
+/**
+* POSITION
+*/
+.main-header {
+  border-bottom: 2px solid #303030;
+  margin-top: 1em;
+  height: 35vw;
+  min-height: 110px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main-header figure {
+  width: 84%;
+  height: 100%;
+}
+
+.main-header figure div {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-header figure img {
+  width: 100%;
+}
+
+.main-header .header-arrow {
+  width: 8%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -webkit-transition: .4s;
+  transition: .4s;
+  background: white;
+  z-index: 999;
+}
+
+.main-header .header-arrow:hover {
+  background: #ebe8e8;
+}
+
+.main-header .header-arrow:nth-child(1) {
+  border-right: 1px solid black;
+}
+
+.main-header .header-arrow:nth-child(3) {
+  border-left: 1px solid black;
+}
+
+.main-header .header-arrow svg {
+  width: 100%;
+  height: 20%;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.main-header .header-arrow:active svg {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}

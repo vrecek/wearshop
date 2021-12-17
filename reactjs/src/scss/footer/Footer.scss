@@ -1,0 +1,61 @@
+@import '../config';
+
+.footer{
+   border-top: 2px solid black;
+   padding-bottom: 1em;
+
+   div{
+      margin-bottom: .5em;
+      display: flex;
+      justify-content: flex-end;
+      height:46px;
+      padding:.5em;
+
+      img{
+         height:100%;
+         width:50px;
+         margin:0 .5em;
+         border: 1px solid black;
+      }
+   }
+
+   ul{
+      list-style: none;
+      display: flex;
+      width:100%;
+      justify-content: space-around;
+      margin-bottom: 2em;
+      border-top: 1px dashed black;
+      border-bottom: 1px dashed black;
+      padding:1em 0;
+      flex-wrap: wrap;
+
+      li{
+         font-weight: 500;
+         cursor: pointer;
+         transition: .3s;
+         font-size: clamp(.8rem,3vw,1rem);
+         margin:0 .3em;
+
+         &:hover{
+            color:$lightBlue-clr;
+         }
+      }
+   }
+
+   p{
+      text-align: center;
+      color:brown;
+      font-size: clamp(.8rem,3vw,1rem);
+
+      &:last-child{
+         font-size: clamp(.7rem,3vw,.9rem);
+      }
+   }
+
+   .logo{
+      width:10%;
+      display: block;
+      margin:0 auto 1em auto;
+   }
+}

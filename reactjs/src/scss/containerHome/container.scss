@@ -1,0 +1,29 @@
+@import '../config';
+
+.container{
+   display: flex;
+
+   article{
+      &.left-side{
+         width:67%;     
+      }
+   
+      &.right-side{
+         width: 33%;
+         border-left: 2px solid $darkSoft-clr;
+      }
+   }
+}
+
+@media (max-width: 768px){
+   .container{
+      flex-direction: column;
+
+      article{
+         &.left-side,
+         &.right-side{
+            width:100%;
+         }
+      }
+   }
+}

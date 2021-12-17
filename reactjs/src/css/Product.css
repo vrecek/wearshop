@@ -1,0 +1,200 @@
+/**
+* FUNCTIONS
+*/
+/**
+* COLORS
+*/
+/**
+* POSITION
+*/
+.prod-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 2em 0;
+  position: relative;
+}
+
+.prod-page figure {
+  width: 40%;
+  height: 40vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.prod-page figure img {
+  display: block;
+  margin: 0 auto;
+  height: 40vw;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.prod-page .right-sec {
+  width: 40%;
+}
+
+.prod-page .right-sec h1 {
+  text-align: center;
+  font-weight: 500;
+  font-size: clamp(1rem, 3vw, 3rem);
+  margin-bottom: .8em;
+}
+
+.prod-page .right-sec table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 2px solid #303030;
+  border-bottom: 2px solid #303030;
+}
+
+.prod-page .right-sec table tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.prod-page .right-sec table td {
+  width: 50%;
+  padding: 1em .5em;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.prod-page .right-sec table td:first-child {
+  font-weight: 700;
+  text-transform: uppercase;
+  word-break: keep-all;
+}
+
+.prod-page .right-sec table td:nth-child(2) {
+  text-align: center;
+  word-break: break-all;
+}
+
+.prod-page .right-sec .size-prod {
+  margin: 2em 0 2.5em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.prod-page .right-sec .size-prod div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.prod-page .right-sec .size-prod div h5 {
+  cursor: pointer;
+  border: 2px solid #303030;
+  margin: 0 .2em;
+  padding: .5em;
+  font-weight: 700;
+}
+
+.prod-page .right-sec .size-prod div h5.active {
+  background: #303030;
+  color: white;
+  pointer-events: none;
+}
+
+.prod-page .right-sec .size-prod div h5:hover {
+  background: #303030;
+  color: white;
+}
+
+.prod-page .right-sec .info-prod {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.prod-page .right-sec .info-prod svg {
+  width: clamp(20px, 3vw, 50px);
+  height: clamp(20px, 3vw, 50px);
+}
+
+.prod-page .right-sec .info-prod div {
+  width: 30%;
+  border: 1px solid black;
+  background: rgba(48, 48, 48, 0.9);
+  border-radius: .3em;
+  color: lime;
+  text-align: center;
+  padding: .5em 0;
+  font-size: clamp(1rem, 3vw, 2rem);
+  font-weight: 500;
+}
+
+.prod-page .right-sec .info-prod button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: .5em 0;
+  width: 60%;
+  height: 100%;
+  font-size: 1.3rem;
+  border-radius: .5em;
+  background: none;
+  outline: 0;
+  cursor: pointer;
+  border: 2px solid saddlebrown;
+  text-transform: uppercase;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.prod-page .right-sec .info-prod button:hover {
+  background: #f1eeee;
+}
+
+@media (max-width: 768px) {
+  .prod-page {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .prod-page figure {
+    width: 100%;
+  }
+  .prod-page figure img {
+    position: static;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .prod-page .right-sec {
+    width: 100%;
+  }
+  .prod-page .right-sec .size-prod {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}

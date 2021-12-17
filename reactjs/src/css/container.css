@@ -1,0 +1,35 @@
+/**
+* FUNCTIONS
+*/
+/**
+* COLORS
+*/
+/**
+* POSITION
+*/
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container article.left-side {
+  width: 67%;
+}
+
+.container article.right-side {
+  width: 33%;
+  border-left: 2px solid #303030;
+}
+
+@media (max-width: 768px) {
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .container article.left-side, .container article.right-side {
+    width: 100%;
+  }
+}

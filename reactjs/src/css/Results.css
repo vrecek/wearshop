@@ -1,0 +1,34 @@
+/**
+* FUNCTIONS
+*/
+/**
+* COLORS
+*/
+/**
+* POSITION
+*/
+.result-cont {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  border: 2px solid black;
+  background: linear-gradient(14deg, snow 5%, #faf8f8 56%);
+  width: 30%;
+  z-index: 9999;
+}
+
+.result-cont h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  padding: .4em;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.result-cont h2:hover {
+  background: #303030;
+  color: white;
+}

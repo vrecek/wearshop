@@ -1,0 +1,169 @@
+@import '../config';
+
+.feedback{
+   width: 70%;
+   margin: 2em auto;
+
+   div{
+      h2{
+         color:White;
+         text-align: center;
+         padding:.5em 0;
+         font-size: clamp(.7rem,3vw,1rem);
+         font-weight: 700;
+         word-spacing: 3px;
+
+         &.mail-true{
+            background: green;    
+         }
+         &.mail-false{
+            background: red;
+         }
+      }
+   }
+
+   h3{
+      text-align: center;
+      font-size:clamp(1rem,2vw,2rem);
+      font-weight: 400;
+   }
+
+   p{
+      text-align: center;
+      margin-bottom: 1em;
+      font-size:clamp(.7rem,2vw,1rem);
+   }
+
+   form{
+      fieldset{
+         border:2px solid $darkSoft-clr;
+         padding:1em;
+         background: rgb(243, 240, 240);
+         border-radius: .1em;
+
+         button{
+            width: 50%;
+            margin: 1em auto 0 auto;
+            display: block;
+            border:2px solid $darkSoft-clr;
+            border-radius: .3em;
+            cursor: pointer;
+            transition: .3s;
+            background: none;
+            color:$darkSoft-clr;
+            padding:1em 0;
+            
+            span{
+               font-size: clamp(.8rem,2vw,1.2rem);
+               font-weight: 700;
+            }
+
+            &:hover{
+               border-color: red;
+               color:red;
+            }
+         }
+
+         legend{
+            margin-left: 5%;
+         }
+
+         .twocont{
+            @include flex-sb-c;
+            margin-bottom: .5em;
+
+            div{
+               position: relative;
+               width:47%;
+
+               p{
+                  position: absolute;
+                  left:5%;
+                  top:50%;
+                  transform: translateY(-50%);
+                  font-family: 'Oswald', sans-serif;
+                  font-size: clamp(.8rem,3vw,1.1rem);
+                  padding:0 .5em;
+                  transition: .5s;
+                  pointer-events: none;
+               }
+
+               input{
+                  width:100%; 
+                  outline: 0;
+                  border:2px solid $darkSoft-clr;
+                  border-radius:.2em;
+                  padding:.7em 1em;    
+                  transition:.3s;
+                  font-size: clamp(.8rem,2vw,1.1rem);
+                  font-weight: 700;
+                  font-family: 'Oswald', sans-serif;              
+               }
+            }
+         }
+
+         .textcont{
+            position: relative;
+
+            textarea{
+               width:100%;
+               border:2px solid $darkSoft-clr;
+               resize: none;
+               border-radius:.2em;
+               transition:.3s;
+               height:20vw;
+               min-height: 180px;
+               outline: 0;
+               padding:1em;
+               font-size: clamp(.8rem,2vw,1.1rem);
+            }
+
+            .starcont{
+               position: absolute;
+               right:3px;
+               bottom:3px;
+               display: flex;
+               align-items: center;
+               justify-content: flex-end;
+
+               div{
+                  cursor: pointer;
+
+                  svg{
+                     pointer-events: none;
+                     border-radius: 50%;
+                     width:clamp(20px,4vw,60px);
+                     height:clamp(20px,4vw,60px);
+                  }
+               }
+               
+            }
+         }
+      }   
+   }
+}
+
+@media (max-width: 480px){
+   .feedback{
+      width: 100%;
+
+      form{
+         fieldset{
+            padding:.5em;
+
+            .twocont{
+               flex-direction: column;
+
+               div{
+                  width: 100%;
+                  margin:.5em 0;
+               }
+            }
+            .textcont{
+               height:20vw;
+               min-height: 180px;
+            }
+         }
+      }
+   }
+} 

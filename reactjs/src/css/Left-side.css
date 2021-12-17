@@ -1,0 +1,122 @@
+/**
+* FUNCTIONS
+*/
+/**
+* COLORS
+*/
+/**
+* POSITION
+*/
+.left-side .pages-cont {
+  border: 2px solid black;
+  border-width: 2px 0 2px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.left-side .pages-cont div {
+  border: 3px solid cornflowerblue;
+  border-width: 0 3px 0 3px;
+  padding: 1em;
+  min-width: 55px;
+  text-align: center;
+  border-radius: .5em;
+  margin: 0 .1em;
+  font-weight: 700;
+  font-size: clamp(0.6rem, 2vw, 1rem);
+  cursor: pointer;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.left-side .pages-cont div.active {
+  background: #303030;
+  color: white;
+  pointer-events: none;
+}
+
+.left-side .pages-cont div:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.left-side nav {
+  border-bottom: 2px solid black;
+}
+
+.left-side nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.left-side nav ul li {
+  width: 50%;
+  border-right: 2px solid black;
+  text-align: center;
+  padding: 1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.left-side nav ul li:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.left-side nav ul li svg {
+  width: 30px;
+  height: 30px;
+}
+
+.left-side nav ul li:last-child {
+  border: 0;
+}
+
+@media (max-width: 480px) {
+  .left-side .pages-cont div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    min-width: auto;
+    width: 12vw;
+    height: 12vw;
+  }
+  .left-side nav ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .left-side nav ul li {
+    width: 100%;
+    border: 0;
+  }
+  .left-side nav ul li:first-child {
+    border-bottom: 2px solid black;
+  }
+}

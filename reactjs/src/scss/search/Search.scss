@@ -1,0 +1,52 @@
+@import '../config';
+
+.search-cont{
+   border-bottom: 2px solid $darkSoft-clr;
+   @include flex-sb-c;
+   padding: .8em .5em;
+   position: relative;
+
+   h4{
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 1px;
+   }
+
+   div{
+      @include flex-c-c;
+      width:30%;
+      min-width: 250px;
+
+      input{
+         width:100%;
+         font-size: 1.1rem;
+         padding: .5em 1em;
+         border:2px solid $darkSoft-clr;
+         border-radius: .3em;
+         transition: .3s;
+         outline: 0;
+
+         &:focus{
+            border-color: rgb(230, 149, 0);
+         }
+      }
+
+      svg{
+         width:30px;
+         height:30px;
+         margin-right: .1em;
+      }
+   }
+}
+
+@media (max-width: 480px){
+   .search-cont{
+      h4{
+         display: none;
+      }
+
+      div{
+         width: 100%;
+         min-width:auto;
+      }
+   }
+} 

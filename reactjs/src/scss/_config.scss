@@ -1,0 +1,48 @@
+/**
+* FUNCTIONS
+*/ 
+
+@function alphaClr($clr,$al){
+   $result: rgba($clr,$al);
+   @return $result;
+}
+
+/**
+* COLORS
+*/ 
+
+$greySoft-clr: rgba($color: #000000, $alpha: .1);
+$darkSoft-clr: #303030;
+$lightBlue-clr: rgb(10, 167, 240);
+
+/**
+* POSITION
+*/ 
+
+@mixin flex-sa-c{
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+}
+
+@mixin flex-sa-none{
+   display: flex;
+   justify-content: space-around;
+}
+
+@mixin flex-c-c{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+@mixin flex-none-c{
+   display: flex;
+   align-items: center;
+}
+
+@mixin flex-sb-c{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}

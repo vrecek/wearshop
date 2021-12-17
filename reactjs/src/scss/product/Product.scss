@@ -1,0 +1,152 @@
+@import '../config';
+
+.prod-page{
+   @include flex-sa-none;
+   margin: 2em 0;
+   position: relative;
+
+   figure{
+      width:40%;
+      height:40vw;
+      @include flex-c-c;
+
+      img{
+         display: block;
+         margin:0 auto;
+         height: 40vw;
+         position: absolute;
+         top:50%;
+         transform: translateY(-50%);
+      }
+   }
+
+   .right-sec{
+      width: 40%;
+
+      h1{
+         text-align: center;
+         font-weight: 500;
+         font-size: clamp(1rem,3vw,3rem);
+         margin-bottom: .8em;
+      }
+
+      table{
+         width:100%;
+         border-collapse: collapse;
+         border-top: 2px solid $darkSoft-clr;
+         border-bottom: 2px solid $darkSoft-clr;
+
+         tr{
+            &:nth-child(even){
+               background: rgba($color: #000, $alpha: .04);
+            }
+         }
+
+         td{
+            width:50%;
+            padding: 1em .5em;
+            font-size: clamp(.8rem,2vw,1rem);
+
+            &:first-child{
+               font-weight: 700;
+               text-transform: uppercase;
+               word-break:keep-all;
+            }
+            
+            &:nth-child(2){
+               text-align: center;
+               word-break: break-all;
+            }
+         }
+      }
+
+      .size-prod{
+         margin: 2em 0 2.5em 0;
+         @include flex-sa-c;
+         
+         div{
+            display: flex;
+
+            h5{
+               cursor: pointer;
+               border:2px solid $darkSoft-clr;
+               margin:0 .2em;
+               padding:.5em;
+               font-weight: 700;
+               
+               &.active{
+                  background:$darkSoft-clr;
+                  color:white;
+                  pointer-events: none;
+               }
+
+               &:hover{
+                  background:$darkSoft-clr;
+                  color:white;
+               }
+            }
+         }       
+      }
+
+      .info-prod{
+         @include flex-sa-c;
+
+         svg{
+            width:clamp(20px,3vw,50px);
+            height:clamp(20px,3vw,50px);
+         }
+         
+         div{
+            width:30%;
+            border:1px solid black;
+            background: alphaClr($darkSoft-clr, .9);
+            border-radius: .3em;
+            color:rgb(0, 255, 0);
+            text-align: center;
+            padding:.5em 0;
+            font-size: clamp(1rem,3vw,2rem);
+            font-weight: 500;
+         }
+
+         button{
+            @include flex-c-c;
+            padding: .5em 0;
+            width:60%;
+            height: 100%;
+            font-size: 1.3rem;
+            border-radius: .5em;
+            background: none;
+            outline: 0;
+            cursor: pointer;
+            border:2px solid saddlebrown;
+            text-transform: uppercase;
+            transition: .3s;
+
+            &:hover{
+               background: rgb(241, 238, 238);
+            }
+         }
+      }
+   }
+}
+
+@media (max-width: 768px){
+   .prod-page{
+      flex-direction: column;
+
+      figure{
+         width: 100%;
+         img{
+            position: static;
+            transform: translateY(0);
+         }
+      }
+
+      .right-sec{
+         width: 100%;
+         .size-prod{
+            flex-direction: column;
+         }
+      }
+   }
+}
