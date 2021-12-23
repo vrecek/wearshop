@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Database = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 const Item = require('./Schema/Item');
+const User = require('./Schema/User');
 class Database {
     uri;
     options;
@@ -42,5 +43,11 @@ class Database {
         }
         return items;
     }
+    async doesUserExist(field, str) {
+        const it = await User.find({ [field]: str }, null, { limit: 1 });
+        return it.length !== 0;
+    }
 }
 exports.Database = Database;
+const _shop = new Database(process.env.MONGO, { useNewUrlParser: true });
+exports.default = _shop;

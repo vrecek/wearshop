@@ -76,6 +76,7 @@ $lines: (
 
       li{
          margin:0 1em;
+
          a{
             text-decoration: none;
             color:black;
@@ -101,22 +102,50 @@ $lines: (
       }
 
       &.nav-icons{
-         @include flex-sa-c;
+         @include flex-sa-c;  
+
+         .icns{
+            margin:0 .5em;
+            @include flex-c-c;
+            position: relative;
+
+            &:before{
+               pointer-events: none;
+               opacity: 0;
+               position: absolute;
+               content: attr(tex);
+               left:50%; transform: translateX(-50%);
+               top:100%;
+               border:1px solid $darkSoft-clr;
+               background: rgb(120, 120, 120);
+               color:White;
+               white-space: nowrap;
+               padding:.2em;
+               transition: .3s;
+               font-size: clamp(.8rem,3vw,1rem);
+               border-radius: .2em;
+            }
+
+            &:hover::before{
+               opacity: 1;
+            }
+         }
 
          svg{
             width: clamp(25px,3vw,35px);
             height: clamp(25px,3vw,35px);
-            margin:0 .5em;
+
             color:$darkSoft-clr;
             cursor: pointer;
             transition: .4s;
+            position: relative;
 
             &:hover{
                color:rgb(120, 120, 120);
             }
          }
 
-         div{
+         div:not(icns){
             width: clamp(25px,3vw,35px);
             height: clamp(25px,3vw,35px);
             margin:0 0 0 .5em;

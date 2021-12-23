@@ -144,21 +144,59 @@
       justify-content: space-around;
 }
 
+.main-nav section.nav-icons .icns {
+  margin: 0 .5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+}
+
+.main-nav section.nav-icons .icns:before {
+  pointer-events: none;
+  opacity: 0;
+  position: absolute;
+  content: attr(tex);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 100%;
+  border: 1px solid #303030;
+  background: #787878;
+  color: White;
+  white-space: nowrap;
+  padding: .2em;
+  -webkit-transition: .3s;
+  transition: .3s;
+  font-size: clamp(0.8rem, 3vw, 1rem);
+  border-radius: .2em;
+}
+
+.main-nav section.nav-icons .icns:hover::before {
+  opacity: 1;
+}
+
 .main-nav section.nav-icons svg {
   width: clamp(25px, 3vw, 35px);
   height: clamp(25px, 3vw, 35px);
-  margin: 0 .5em;
   color: #303030;
   cursor: pointer;
   -webkit-transition: .4s;
   transition: .4s;
+  position: relative;
 }
 
 .main-nav section.nav-icons svg:hover {
   color: #787878;
 }
 
-.main-nav section.nav-icons div {
+.main-nav section.nav-icons div:not(icns) {
   width: clamp(25px, 3vw, 35px);
   height: clamp(25px, 3vw, 35px);
   margin: 0 0 0 .5em;
@@ -166,7 +204,7 @@
   cursor: pointer;
 }
 
-.main-nav section.nav-icons div span {
+.main-nav section.nav-icons div:not(icns) span {
   position: absolute;
   border: 1.2px solid #303030;
   width: 90%;
@@ -179,15 +217,15 @@
   transition: .8s;
 }
 
-.main-nav section.nav-icons div span:nth-child(1) {
+.main-nav section.nav-icons div:not(icns) span:nth-child(1) {
   top: 20%;
 }
 
-.main-nav section.nav-icons div span:nth-child(2) {
+.main-nav section.nav-icons div:not(icns) span:nth-child(2) {
   top: 50%;
 }
 
-.main-nav section.nav-icons div span:nth-child(3) {
+.main-nav section.nav-icons div:not(icns) span:nth-child(3) {
   top: 80%;
 }
 

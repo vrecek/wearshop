@@ -49,7 +49,10 @@ export async function fetchPost(url, body = {}){
          case 404: throw new Error(`URL (${url}) passed has not been found.`)
          case 403: throw new Error(response.statusText)
          case 406: throw new ReferenceError(response.statusText)
-         default: throw new Error(`UNKOWN ERROR: ${response.statusText}`)   
+         default: 
+            const err = new Error(response.statusText);
+            err.code = response.status;
+            throw err; 
       }
    }
    

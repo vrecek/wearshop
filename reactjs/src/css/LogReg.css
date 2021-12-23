@@ -1,0 +1,263 @@
+/**
+* FUNCTIONS
+*/
+/**
+* COLORS
+*/
+/**
+* POSITION
+*/
+.logreg {
+  width: 600px;
+  border: 2px solid #f78809;
+  background: url("https://img.freepik.com/free-vector/minimal-desktop-background-white-abstract-design-vector_53876-135921.jpg?size=626&ext=jpg");
+  background-size: cover;
+  border-radius: .2em;
+  min-height: 600px;
+  margin: 2em auto 3.2em auto;
+  overflow: hidden;
+}
+
+.logreg section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 2px solid #f78809;
+}
+
+.logreg section div {
+  width: 50%;
+  padding: 1em 0;
+  cursor: pointer;
+}
+
+.logreg section div.active {
+  background: bisque;
+  pointer-events: none;
+}
+
+.logreg section div:first-child {
+  border-right: 2px solid #f78809;
+}
+
+.logreg section div h1 {
+  text-align: center;
+  pointer-events: none;
+}
+
+.logreg article {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.logreg article form {
+  min-width: 100%;
+  padding: 1em 2em;
+}
+
+.logreg article form.login h3.errlog {
+  font-size: .95rem;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  background: crimson;
+  padding: .8em 0;
+}
+
+.logreg article form.login h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: .5em 0;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.7rem;
+}
+
+.logreg article form.login h2 svg {
+  margin: 0 .3em;
+}
+
+.logreg article form.login .lr-div {
+  margin-bottom: 2em;
+  position: relative;
+}
+
+.logreg article form.login .lr-div:nth-child(3) {
+  margin-bottom: .2em;
+}
+
+.logreg article form.login .lr-div p {
+  font-weight: 600;
+  font-size: .9rem;
+  margin-bottom: .3em;
+}
+
+.logreg article form.login .lr-div input {
+  width: 100%;
+  padding: .3em 1em;
+  font-size: 1.3rem;
+  border-radius: .1em;
+  border: 2px solid #ff9900;
+  outline: 0;
+}
+
+.logreg article form.login a {
+  text-decoration: none;
+  color: #e46e00;
+}
+
+.logreg article form.login a:hover {
+  border-bottom: 2px solid #4b4b4b;
+  color: #4b4b4b;
+}
+
+.logreg article form.login .check {
+  margin-top: 2em;
+  margin-bottom: .2em;
+}
+
+.logreg article form.login .check label {
+  cursor: pointer;
+}
+
+.logreg article form.login button {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: .5em 0;
+  text-transform: uppercase;
+  outline: 0;
+  border: 2px solid #0044ff;
+  color: #0044ff;
+  background: #fafafa;
+  border-radius: .5em;
+  cursor: pointer;
+}
+
+.logreg article form.login button span {
+  font-weight: 700;
+}
+
+.logreg article form.login button:hover {
+  background: #3d3d3d;
+}
+
+.logreg article form.register h3.errreg {
+  background: crimson;
+  font-size: .9rem;
+  margin-bottom: .2em;
+  padding: .3em;
+  font-weight: 200;
+  color: white;
+}
+
+.logreg article form.register h3.sucreg {
+  background: green;
+  font-size: .9rem;
+  text-align: center;
+  padding: .8em;
+  font-weight: 400;
+  color: white;
+}
+
+.logreg article form.register h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: .5em 0;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.7rem;
+}
+
+.logreg article form.register h2 svg {
+  margin: 0 .3em;
+}
+
+.logreg article form.register .lr-div {
+  position: relative;
+  margin-bottom: 1em;
+}
+
+.logreg article form.register .lr-div svg {
+  position: absolute;
+  left: -5.4%;
+  top: 75%;
+  width: 25px;
+  height: 25px;
+  -webkit-transform: translateY(-75%);
+          transform: translateY(-75%);
+  color: red;
+}
+
+.logreg article form.register .lr-div p {
+  font-weight: 700;
+  font-size: .8rem;
+}
+
+.logreg article form.register .lr-div input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: .3em .5em;
+  outline: 0;
+  border: 2px solid orangered;
+  border-radius: .1em;
+}
+
+.logreg article form.register .check {
+  margin-bottom: .5em;
+}
+
+.logreg article form.register .check label {
+  cursor: pointer;
+  font-size: .85rem;
+  font-weight: 400;
+}
+
+.logreg article form.register .check label a {
+  color: #6300c0;
+  text-decoration: none;
+}
+
+.logreg article form.register .check label a:hover {
+  text-decoration: underline;
+}
+
+.logreg article form.register .g-recaptcha {
+  margin-bottom: .5em;
+}
+
+.logreg article form.register button {
+  width: 100%;
+  border: 2px solid #0044ff;
+  border-radius: .2em;
+  padding: .5em 0;
+  font-size: 1.1rem;
+  color: #0044ff;
+  padding: .5em 0;
+  -webkit-transition: .2s;
+  transition: .2s;
+  cursor: pointer;
+}
+
+.logreg article form.register button:hover {
+  background: #3d3d3d;
+}
+
+.logreg article form.register button span {
+  font-weight: 700;
+}

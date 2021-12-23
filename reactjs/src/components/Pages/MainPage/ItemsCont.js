@@ -12,6 +12,7 @@ const ItemsCont = () => {
       fetchGet('/items')
       .then(data => setItems(data))
       .catch(err => navigate('/error', { state: { erro: err, code: err.code } }) )
+      // eslint-disable-next-line
    },[])
 
    return (

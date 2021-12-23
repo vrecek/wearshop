@@ -5,22 +5,32 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "client": "cd reactjs && npm start",
+    "react": "cd reactjs && npm start",
     "server": "cd js && nodemon server.js --ignore client",
-    "dev": "concurrently \"npm run client\" \"npm run server\""
+    "dev": "concurrently \"npm run react\" \"npm run server\""
   },
   "author": "vrec",
   "license": "ISC",
   "devDependencies": {
+    "@types/crypto-js": "^4.0.2",
     "@types/express": "^4.17.13",
     "@types/node": "^16.11.11",
+    "@types/node-fetch": "^3.0.3",
     "concurrently": "^6.4.0",
     "nodemon": "^2.0.15"
   },
   "dependencies": {
+    "@types/express-session": "^1.17.4",
+    "connect-mongo": "^4.6.0",
+    "crypto-js": "^4.1.1",
     "dotenv": "^10.0.0",
+    "email-validator": "^2.0.4",
     "express": "^4.17.1",
+    "express-session": "^1.17.2",
     "mongoose": "^6.1.1",
-    "nodemailer": "^6.7.2"
+    "node-fetch": "^2.6.6",
+    "nodemailer": "^6.7.2",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0"
   }
 }

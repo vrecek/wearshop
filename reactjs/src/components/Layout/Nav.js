@@ -54,8 +54,9 @@ const Nav = () => {
          </ul>
 
          <section className='nav-icons'>
-            <FaShoppingBasket />
-            <AiOutlineLogin />
+            <a href='/' tex='Cart' className='icns'><FaShoppingBasket /></a>
+            <a href='/credentials' tex='Sign in' className='icns'> <AiOutlineLogin /></a>
+           
             <div onClick={ menuToggle }>
                <span></span>
                <span></span>

@@ -5,11 +5,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const router = express_1.default.Router();
-const Database_1 = require("../Database");
-const _shop = new Database_1.Database(process.env.MONGO, { useNewUrlParser: true });
+const Database_1 = __importDefault(require("../Database"));
 router.get('/search/:str', async (req, res) => {
     try {
-        const item = await _shop.viewAll({ byWhat: 'name', str: req.params.str });
+        const item = await Database_1.default.viewAll({ byWhat: 'name', str: req.params.str });
         res.json(item);
     }
     catch (err) {
@@ -18,7 +17,7 @@ router.get('/search/:str', async (req, res) => {
 });
 router.get('/products/:id', async (req, res) => {
     try {
-        const item = await _shop.viewOne(req.params.id);
+        const item = await Database_1.default.viewOne(req.params.id);
         res.json(item);
     }
     catch (err) {
@@ -27,7 +26,7 @@ router.get('/products/:id', async (req, res) => {
 });
 router.get('/', async (req, res) => {
     try {
-        const it = await _shop.viewAll();
+        const it = await Database_1.default.viewAll();
         res.json(it);
     }
     catch (err) {

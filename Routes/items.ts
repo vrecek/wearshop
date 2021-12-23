@@ -1,7 +1,6 @@
 import express, { Request, Response } from 'express';
 const router = express.Router();
-import { Database } from '../Database';
-const _shop = new Database(process.env.MONGO!, { useNewUrlParser: true });
+import _shop from '../Database';
 
 router.get('/search/:str', async (req:Request,res:Response) => { // SEARCH RESULTS
    try{

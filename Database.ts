@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 const Item = require('./Schema/Item');
+const User = require('./Schema/User');
 interface Object {
    [key:string]: any
 }
@@ -46,4 +47,13 @@ export class Database {
 
       return items;   
    }
+
+   public async doesUserExist(field:string, str:string){
+      const it = await User.find({ [field]: str }, null, { limit: 1 });
+
+      return it.length !== 0;
+   }
 }
+
+const _shop = new Database(process.env.MONGO!, { useNewUrlParser: true });
+export default _shop;

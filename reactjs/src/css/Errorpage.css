@@ -7,6 +7,48 @@
 /**
 * POSITION
 */
+.errorpage figure {
+  height: 20vw;
+  min-height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.errorpage figure img {
+  height: 100%;
+}
+
 .errorpage h1 {
-  background: green;
+  text-align: center;
+  font-weight: 700;
+  margin: .5em 0;
+}
+
+.errorpage div {
+  background: #e3edff;
+  border: 1px solid #303030;
+  padding: 1em;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 1.5em;
+}
+
+.errorpage div h4,
+.errorpage div h3 {
+  text-align: center;
+}
+
+.errorpage div h3 {
+  background: #e2e2e2;
+  padding: .5em 0;
+  margin-bottom: 1em;
+  color: red;
+  font-weight: 700;
 }

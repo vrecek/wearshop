@@ -1,7 +1,41 @@
 @import '../config';
 
 .errorpage{
+   figure{
+      height:20vw;
+      min-height: 120px;
+      @include flex-c-c;
+
+      img{
+         height: 100%;
+      }
+   }
+
    h1{
-      background: green;
+      text-align: center;
+      font-weight: 700;
+      margin:.5em 0;
+   }
+
+   div{
+      background: rgb(227, 237, 255);
+      border: 1px solid $darkSoft-clr;
+      padding:1em;
+      width: 90%;
+      margin:0 auto;
+      margin-bottom: 1.5em;
+
+      h4,
+      h3{
+         text-align: center;
+      }
+
+      h3{
+         background: rgb(226, 226, 226);
+         padding:.5em 0;
+         margin-bottom: 1em;
+         color:rgb(255, 0, 0);
+         font-weight: 700;
+      }
    }
 }

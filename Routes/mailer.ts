@@ -25,7 +25,7 @@ router.post('/', async (req:Request, res:Response) => {
       })
       
       const mailOptions = {
-         from: `${nick} <${process.env.MAIL}`,
+         from: `${nick} <${process.env.MAIL}>`,
          to: process.env.MAIL,
          subject: 'Wearshop Opinion',
          html: 

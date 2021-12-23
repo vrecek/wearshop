@@ -1,8 +1,9 @@
 import React from 'react'
 
-const Inputs = ({ typ, text, refe, name }) => {
+const Inputs = ({ typ, text, refe, name, cname, additional }) => {
    return (
-      <div ref={ refe }>
+      <div className={ cname } ref={ refe }>
+         <span>{ additional }</span>
          <p>{ text }</p>
          <input spellCheck='false' autoComplete='off' type={ typ } name={ name } />
       </div>

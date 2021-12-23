@@ -27,7 +27,7 @@ const Feedback = () => {
 
       // INPUT TEXT FOCUS
       arr.forEach(item => { 
-         const [inp, para] = [item.children[1], item.children[0]];
+         const [para, inp] = [item.children[1], item.children[2]];
 
          item.addEventListener('focusin', () => {       
             inp.style.borderColor='rgb(0, 202, 0)';

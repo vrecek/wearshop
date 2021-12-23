@@ -1,17 +1,25 @@
 import React from 'react'
 import '../../../css/Errorpage.css'
 import { useLocation } from 'react-router-dom'
+import errImg from '../../../images/error.png'
 
 const ErrorPage = () => {
    const state = useLocation().state;
-   const eCode = state.code;
+   const eCode = state.code ? state.code : 500;
    const eText = state.erro.message;
-   const eTextFull = state.erro.stack;
 
    return (
       <main className='errorpage'>
-         <h1>{ eCode }</h1>
-         <h1>{ eText }</h1>
+         <figure>
+            <img src={ errImg } alt='error' />
+         </figure>
+         <h1><i>Oops! An error occured.</i></h1>
+         <div>
+            <h4>Message:</h4>
+            <h3>{ eText }</h3>
+            <h4>Error code:</h4>
+            <h3>{ eCode }</h3>
+         </div>
       </main>
    )
 }
