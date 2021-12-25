@@ -15,6 +15,7 @@ $lines: (
       position: absolute;
       background: rgb(249, 254, 255);
       width:300px;
+      max-width: 100%;
       border: 2px solid $lightBlue-clr;
       right:0;
       bottom:0;
@@ -22,7 +23,7 @@ $lines: (
       transition:1s;
       padding-bottom: .4em;
       border-radius: .5em 0 0 .5em;
-      z-index: 99999;
+      z-index: 999999999;
 
       ol{
          list-style: none;
@@ -33,6 +34,7 @@ $lines: (
             color: $darkSoft-clr;
             text-decoration: none;
             @include flex-c-c;
+            flex-direction: column;
             position: relative;  
             transition: .3s;
 

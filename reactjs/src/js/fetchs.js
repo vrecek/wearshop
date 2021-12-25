@@ -58,3 +58,13 @@ export async function fetchPost(url, body = {}){
    
    return await response.json();
 }
+
+export async function isLogged(){
+   const response = await fetch('/users', {
+      headers: {
+         'Content-Type': 'application/json'
+      },
+   });
+
+   return await response.json();
+}

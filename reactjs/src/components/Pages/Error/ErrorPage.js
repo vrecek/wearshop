@@ -5,9 +5,13 @@ import errImg from '../../../images/error.png'
 
 const ErrorPage = () => {
    const state = useLocation().state;
-   const eCode = state.code ? state.code : 500;
-   const eText = state.erro.message;
-
+   let eCode = 500;
+   let eText = 'If you see this error, you probably shouldnt be here...'
+   if(state){
+      eCode = state.code;
+      eText = state.erro.message;
+   }
+   
    return (
       <main className='errorpage'>
          <figure>

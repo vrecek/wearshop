@@ -44,12 +44,11 @@ app.use('/users', require('./Routes/logreg'));
 
 /* --------------------------------------------------- */
 
+
+
 app.get('/', (req:Request,res:Response):void => {
-   if(req.isAuthenticated()){
-      res.send('auth')
-   }else{
-      res.send('not auth')
-   }
+   const auth = req.isAuthenticated();
+   res.send(`mainn + ${auth}`)
 })
 
 const PORT = process.env.PORT || 5000;

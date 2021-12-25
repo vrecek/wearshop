@@ -41,6 +41,7 @@ router.post('/', async (req:Request, res:Response) => {
       res.json({ msg: 'Mail sucessfully sent' })
    }catch(err:any){
       if(err.code === 'EAUTH'){
+         console.log(err)
          res.statusMessage = 'Authentication failed. Try again or contact us directly.';
          res.status(403).end();
       }else{

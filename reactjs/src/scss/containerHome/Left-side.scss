@@ -32,20 +32,58 @@
    nav{
       border-bottom:2px solid black;
 
+      ol{
+         position: absolute;
+         display: none;
+         top:100%;
+         background: rgb(240, 240, 240);
+         width: calc(100% + 3px);
+         border: 2px solid black; border-width: 0 2px 2px 0;
+         z-index: 9999;
+         list-style: none;
+         flex-wrap: wrap;
+         overflow:hidden;
+         height: 0px;
+         @include flex-sa-c;
+
+         &.scnd{
+            border-left:2px solid black;
+            z-index: 999;
+         }
+
+         li{
+            width:33%;
+            padding:1.5em 0;
+            font-weight: 300;
+            font-size: clamp(.6rem,1.4vw,.95rem);
+            transition: .3s;
+
+            &:hover{
+               background: rgb(211, 211, 211);
+            }
+         }
+      }
+
       ul{
          display: flex;
          list-style: none;
 
-         li{
+         li:not(.li-inn){
+            span{
+               pointer-events: none;
+               @include flex-c-c;
+               font-weight: 500;
+            }
+
+            position: relative;
             width:50%;
             border-right:2px solid black;
             text-align: center;
             padding:1em 0;
-            @include flex-c-c;
-            font-weight: 700;
+            @include flex-c-c;   
             text-transform: uppercase;
             cursor: pointer;
-            transition: .3s;
+            transition: all .5s;
 
             &:hover{
                background: $greySoft-clr;
@@ -79,7 +117,7 @@
          ul{
             flex-direction: column;
             
-            li{
+            li.li-what{
                width: 100%;
                border:0;
 

@@ -8,11 +8,18 @@ import { TiTick } from 'react-icons/ti'
 import { FaTimes } from 'react-icons/fa'
 import { BiUserPlus } from 'react-icons/bi'
 import { useRef, useEffect, useState } from 'react'
-import { fetchPost } from '../../../js/fetchs'
+import { fetchPost, fetchGet } from '../../../js/fetchs'
 
 const LogReg = () => {
    const [REGSUCCESS, setREGSUCCESS] = useState(null);
    const [LOGSUCCESS, setLOGSUCCESS] = useState(null);
+
+   const navigate2 = useNavigate();
+   fetchGet('/users')
+   .then(data => {
+      if(data.bool === true) window.location.href='/'
+   })
+   .catch(err => navigate2('/error', { state: { erro: err, code: err.code } }) )
  
    const [nickS, setNickS] = useState(0);
    const [mailS, setMailS] = useState(0);

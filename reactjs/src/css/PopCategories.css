@@ -1,0 +1,115 @@
+/**
+* FUNCTIONS
+*/
+/**
+* COLORS
+*/
+/**
+* POSITION
+*/
+.popular-cats {
+  padding: 2em 0;
+  background: url("https://img.freepik.com/free-vector/elegant-white-background-with-shiny-lines_1017-17580.jpg?size=626&ext=jpg&ga=GA1.2.2037429681.1628812800");
+  background-size: cover;
+}
+
+.popular-cats h3 {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 2em;
+}
+
+.popular-cats section {
+  width: 90%;
+  margin: 0 auto 5em auto;
+}
+
+.popular-cats section:last-child {
+  margin: 0 auto 3em auto;
+}
+
+.popular-cats section .div-inf {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.popular-cats section .div-inf h5 {
+  font-weight: 700;
+  margin-bottom: .1em;
+}
+
+.popular-cats section .div-inf h5 span {
+  color: #008ae6;
+  font-weight: inherit;
+  cursor: pointer;
+}
+
+.popular-cats section .div-inf h5 span:hover {
+  color: #005994;
+}
+
+.popular-cats section article {
+  border: 2px solid black;
+  border-radius: .3em;
+  height: 230px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding-bottom: 1em;
+}
+
+.popular-cats section article .prod {
+  border: 2px solid #303030;
+  border-radius: .5em;
+  cursor: pointer;
+  height: 100%;
+  width: 230px;
+  margin: .5em;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.popular-cats section article .prod img {
+  height: 65%;
+  display: block;
+  margin: 0 auto;
+}
+
+.popular-cats section article .prod h6 {
+  text-align: center;
+  margin: .5em 0;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.popular-cats section article .prod h6:nth-child(3) {
+  color: green;
+  font-weight: 700;
+}
+
+.popular-cats section article .prod:hover {
+  background: #e4e4e4;
+}
+
+@media (max-width: 480px) {
+  .popular-cats section article {
+    height: 150px;
+  }
+  .popular-cats section article .prod {
+    width: 150px;
+  }
+  .popular-cats section article .prod h6 {
+    font-size: .6rem;
+  }
+}

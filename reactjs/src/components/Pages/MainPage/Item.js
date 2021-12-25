@@ -1,10 +1,9 @@
 import React from 'react'
 import Button from '../../Reusable/Button'
 import { VscInspect } from 'react-icons/vsc'
+import { redirectProd } from '../../../js/redirect'
 
 const Item = ({ text, price, imgsrc, cname, id }) => {
-   const redirectProd = num => window.location.href = `/product/${num}`
-
    return (
       <article>
          <div className='img-cont'>

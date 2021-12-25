@@ -1,15 +1,19 @@
 import React from 'react'
 import logo from '../../images/logo.png'
 import '../../css/Nav.css'
+import { isLogged } from '../../js/fetchs'
 import { Link } from 'react-router-dom'
 import { FaShoppingBasket, FaSun } from 'react-icons/fa'
 import { AiOutlineLogin, AiOutlineQuestionCircle } from 'react-icons/ai'
 import { MdManageAccounts, MdOutlinePrivacyTip } from 'react-icons/md'
-import { BiSupport } from 'react-icons/bi'
+import { BiSupport, BiLogOut } from 'react-icons/bi'
 import { SiGithubsponsors } from 'react-icons/si'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Nav = () => {
+   const navigate = useNavigate();
+   const [auth, setAuth] = useState({authed:false, user:''});
    const [toggled, setToggled] = useState(false);
    const lines = [20,50,80];
    const cross = [225,225,135];
@@ -40,6 +44,16 @@ const Nav = () => {
       setToggled(!toggled);
    }
 
+   useEffect(() => {
+      isLogged()
+      .then(data => {
+         const currUser = data.user ? data.user.username : ''
+         setAuth({authed: data.bool, user: currUser})
+      })
+      .catch(err => navigate('/error', { state: { erro: err, code: err.code } }))
+      // eslint-disable-next-line
+   },[])
+
    return (
       <nav className='main-nav'>
          <section className='nav-logo'>
@@ -55,7 +69,16 @@ const Nav = () => {
 
          <section className='nav-icons'>
             <a href='/' tex='Cart' className='icns'><FaShoppingBasket /></a>
-            <a href='/credentials' tex='Sign in' className='icns'> <AiOutlineLogin /></a>
+            {
+               auth.authed === true ? 
+               <>
+                  <a href='http://localhost:5000/users/logout' tex='Logout' className='icns'> <BiLogOut /> </a>
+                  <Link to='/' tex='Account' className='icns'> <MdManageAccounts /> </Link>
+               </>
+               : 
+               <Link to='/credentials' tex='Sign in' className='icns'> <AiOutlineLogin /></Link>
+            }
+            
            
             <div onClick={ menuToggle }>
                <span></span>
@@ -67,12 +90,20 @@ const Nav = () => {
          <article className='nav-menu'>
            <ol>
               <a href='/'> <li> <FaSun /> LIGHT MODE</li> </a>
-              <a href='/'> <li> <MdManageAccounts /> Account</li> </a> 
+              <a className='acc' href='/'>
+                  { auth.authed ? <p>logged as: <i>{ auth.user }</i> </p> : '' }
+                  <li> <MdManageAccounts /> Account</li> 
+               </a> 
               <a href='/'> <li> <AiOutlineQuestionCircle /> Terms &amp; Services</li> </a>
               <a href='/'> <li> <MdOutlinePrivacyTip /> Privacy policy</li> </a>
               <a href='/'> <li> <SiGithubsponsors /> Sponsors</li> </a>
               <a href='/'> <li> <BiSupport /> Support</li> </a>
-              <a href='/'> <li> <AiOutlineLogin /> Login / Register</li> </a>
+               {
+                 auth.authed === true ?
+                 <a href='http://localhost:5000/users/logout'> <li> <BiLogOut /> Logout</li> </a>
+                 :
+                 <a href='/credentials'> <li> <AiOutlineLogin /> Login / Register</li> </a>
+               }
            </ol>
            <p>&copy; All rights reserved to its owners &copy;</p>
          </article>

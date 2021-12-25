@@ -1,0 +1,100 @@
+@import '../config';
+
+.popular-cats{
+   padding:2em 0;
+   background: url('https://img.freepik.com/free-vector/elegant-white-background-with-shiny-lines_1017-17580.jpg?size=626&ext=jpg&ga=GA1.2.2037429681.1628812800');
+   background-size: cover;
+
+   h3{
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 2em;
+   }
+
+   section{
+      width:90%;
+      margin:0 auto 5em auto;
+
+      &:last-child{ margin:0 auto 3em auto; }
+
+      .div-inf{
+         @include flex-sb-c;
+         
+         h5{ 
+            font-weight: 700; 
+            margin-bottom: .1em;
+
+            span{
+               color:rgb(0, 138, 230);
+               font-weight: inherit;
+               cursor: pointer;
+
+               &:hover{
+                  color: rgb(0, 89, 148);
+               }
+            }
+         }
+      } 
+
+      article{
+         border:2px solid black;
+         border-radius: .3em;
+         height:230px;
+         display: flex;
+         overflow-x: scroll;
+         overflow-y: hidden;
+         padding-bottom: 1em;
+
+         .prod{
+            border: 2px solid $darkSoft-clr;
+            border-radius: .5em;
+            cursor: pointer;
+            height:100%;
+            width:230px;
+            margin: .5em;
+            flex-shrink: 0;
+            transition: .3s;
+
+            img{
+               height:65%;
+               display: block;
+               margin: 0 auto;
+            }
+
+            h6{
+               text-align: center;
+               margin:.5em 0;
+               font-size: 1rem;
+               font-weight: 400;
+
+               &:nth-child(3){
+                  color:green;
+                  font-weight: 700;
+               }
+            }
+
+            &:hover{
+               background: rgb(228, 228, 228);
+            }
+         }
+      }
+   }
+}
+
+@media (max-width: 480px){
+   .popular-cats{
+      section{
+         article{
+            height:150px;
+
+            .prod{
+               width:150px;
+
+               h6{
+                  font-size: .6rem;
+               }
+            }
+         }
+      }
+   }
+} 

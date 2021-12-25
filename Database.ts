@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 const Item = require('./Schema/Item');
 const User = require('./Schema/User');
+const passport = require('passport');
 interface Object {
    [key:string]: any
 }
@@ -48,7 +49,7 @@ export class Database {
       return items;   
    }
 
-   public async doesUserExist(field:string, str:string){
+   public async doesUserExist(field:string, str:string):Promise<boolean>{
       const it = await User.find({ [field]: str }, null, { limit: 1 });
 
       return it.length !== 0;

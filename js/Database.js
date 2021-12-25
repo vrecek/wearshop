@@ -7,6 +7,7 @@ exports.Database = void 0;
 const mongoose_1 = __importDefault(require("mongoose"));
 const Item = require('./Schema/Item');
 const User = require('./Schema/User');
+const passport = require('passport');
 class Database {
     uri;
     options;

@@ -30,6 +30,24 @@ const passwordCrypto_1 = require("../Typescript/passwordCrypto");
 const passport = require('passport');
 const User = require('../Schema/User');
 const router = express_1.default.Router();
+router.get('/', async (req, res) => {
+    if (req.isAuthenticated()) {
+        const loggedUser = await User.findById(req.session.passport.user);
+        res.json({ bool: true, user: loggedUser });
+    }
+    else {
+        res.json({ bool: false, user: null });
+    }
+});
+router.get('/logout', (req, res) => {
+    if (req.isAuthenticated()) {
+        req.logout();
+        res.redirect('http://localhost:3000');
+    }
+    else {
+        res.redirect('http://localhost:3000/error');
+    }
+});
 router.post('/login', passport.authenticate('local', { failureRedirect: '/users/failed' }), (req, res) => {
     if (req.body.remember) {
         const infiniteTime = Math.pow(2, 31) - 1;

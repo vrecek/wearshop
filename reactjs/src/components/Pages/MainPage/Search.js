@@ -24,7 +24,7 @@ const Search = () => {
          <h4>Search through our base</h4>
          <div>
             <BsSearch />
-            <input onChange={ (e) => query(e) } spellCheck='false' type='text' />
+            <input onKeyUp={ (e) => query(e) } spellCheck='false' type='text' />
          </div>
          { result && <Results results={ result } /> }
       </section>

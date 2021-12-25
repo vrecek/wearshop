@@ -41,6 +41,7 @@ router.post('/', async (req, res) => {
     }
     catch (err) {
         if (err.code === 'EAUTH') {
+            console.log(err);
             res.statusMessage = 'Authentication failed. Try again or contact us directly.';
             res.status(403).end();
         }

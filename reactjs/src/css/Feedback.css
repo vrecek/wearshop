@@ -41,6 +41,10 @@
   font-size: clamp(0.7rem, 2vw, 1rem);
 }
 
+.feedback form {
+  position: relative;
+}
+
 .feedback form fieldset {
   border: 2px solid #303030;
   padding: 1em;

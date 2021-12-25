@@ -50,6 +50,48 @@
   border-bottom: 2px solid black;
 }
 
+.left-side nav ol {
+  position: absolute;
+  display: none;
+  top: 100%;
+  background: #f0f0f0;
+  width: calc(100% + 3px);
+  border: 2px solid black;
+  border-width: 0 2px 2px 0;
+  z-index: 9999;
+  list-style: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+  height: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.left-side nav ol.scnd {
+  border-left: 2px solid black;
+  z-index: 999;
+}
+
+.left-side nav ol li {
+  width: 33%;
+  padding: 1.5em 0;
+  font-weight: 300;
+  font-size: clamp(0.6rem, 1.4vw, 0.95rem);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.left-side nav ol li:hover {
+  background: lightgray;
+}
+
 .left-side nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -57,7 +99,8 @@
   list-style: none;
 }
 
-.left-side nav ul li {
+.left-side nav ul li:not(.li-inn) {
+  position: relative;
   width: 50%;
   border-right: 2px solid black;
   text-align: center;
@@ -71,23 +114,36 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: all .5s;
+  transition: all .5s;
 }
 
-.left-side nav ul li:hover {
+.left-side nav ul li:not(.li-inn) span {
+  pointer-events: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 500;
+}
+
+.left-side nav ul li:not(.li-inn):hover {
   background: rgba(0, 0, 0, 0.1);
 }
 
-.left-side nav ul li svg {
+.left-side nav ul li:not(.li-inn) svg {
   width: 30px;
   height: 30px;
 }
 
-.left-side nav ul li:last-child {
+.left-side nav ul li:not(.li-inn):last-child {
   border: 0;
 }
 
@@ -112,11 +168,11 @@
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .left-side nav ul li {
+  .left-side nav ul li.li-what {
     width: 100%;
     border: 0;
   }
-  .left-side nav ul li:first-child {
+  .left-side nav ul li.li-what:first-child {
     border-bottom: 2px solid black;
   }
 }

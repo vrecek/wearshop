@@ -12,7 +12,25 @@ interface Object {
    [key:string]:any
 }
 
-router.post('/login', passport.authenticate('local', { failureRedirect: '/users/failed' }), (req:Request,res:Response) => {
+router.get('/', async (req:Request,res:Response) => { // IS USER LOGGED , IF YES GET HIM
+   if(req.isAuthenticated()){
+      const loggedUser = await User.findById(req.session.passport.user);
+      res.json({bool:true, user:loggedUser})
+   }else{
+      res.json({bool:false, user: null});
+   }
+})
+
+router.get('/logout', (req:Request,res:Response) => { // LOGOUT
+   if(req.isAuthenticated()){
+      req.logout();
+      res.redirect('http://localhost:3000')
+   }else{
+      res.redirect('http://localhost:3000/error')
+   }
+})
+
+router.post('/login', passport.authenticate('local', { failureRedirect: '/users/failed' }), (req:Request,res:Response) => { // LOGIN
    if(req.body.remember){
       const infiniteTime = Math.pow(2,31) - 1;
       req.session.cookie.maxAge = infiniteTime;
@@ -21,7 +39,7 @@ router.post('/login', passport.authenticate('local', { failureRedirect: '/users/
    res.json({ result: true })
 })
 
-router.post('/register', async (req:Request,res:Response) => {
+router.post('/register', async (req:Request,res:Response) => { // REGISTER
    const { user, mail, pass, passconf, check, captcha } = req.body;
 
    /**
@@ -92,7 +110,7 @@ router.post('/register', async (req:Request,res:Response) => {
 })
 
 // AUTHENTICATE FAILED
-router.get('/failed', (req,res) => {
+router.get('/failed', (req,res) => { // REDIRECT FAILED
    res.json({ result: false })
 })
 

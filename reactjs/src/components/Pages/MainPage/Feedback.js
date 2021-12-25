@@ -5,6 +5,8 @@ import Button from '../../Reusable/Button'
 import Star from '../../Reusable/Star'
 import { useRef, useEffect, useState } from 'react'
 import { fetchPost } from '../../../js/fetchs'
+import { loadOn, loadOff } from '../../../js/loadgifs'
+import load from '../../../images/loading.gif'
 
 const Feedback = () => {
    const [errs, setErrs] = useState(null);
@@ -83,6 +85,9 @@ const Feedback = () => {
    // SEND AN EMAIL, ON SUCCESS CLEAR FIELDS AND DISPLAY GOOD MESSAGE, OTHERWISE DISPLAY FAIL MESSAGE
    function sendMail(e){
       e.preventDefault();
+
+      const img = loadOn(load, e.target.parentElement.parentElement);
+
       const form = e.target.parentElement.parentElement.elements;
 
       fetchPost('/mailer', { nick: form.nick.value, mail: form.mail.value, textarea: form.textarea.value })
@@ -92,8 +97,8 @@ const Feedback = () => {
          textarea.current.style.borderColor='#303030';
          textarea.current.value = '';
          arr.forEach(item => { 
-            const [inp, para] = [item.children[1], item.children[0]]; 
-            item.childNodes[1].value = '';
+            const [inp, para] = [item.children[2], item.children[1]]; 
+            inp.value = '';
             para.style.left='5%';
             para.style.top='50%';
             para.style.transform='translate(0,-50%)';
@@ -105,6 +110,7 @@ const Feedback = () => {
          setErrs({ info: data.msg, succ: true })
       })
       .catch(err => setErrs({ info: err.message, succ: false }))
+      .finally(() => { loadOff(img) })
    }
 
    // AFTER SUBMITING, DISPLAY STATUS MSG, CLEAR AFTER 4 SEC

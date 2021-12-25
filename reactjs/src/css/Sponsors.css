@@ -1,0 +1,50 @@
+/**
+* FUNCTIONS
+*/
+/**
+* COLORS
+*/
+/**
+* POSITION
+*/
+.sponsors {
+  padding: 2em 0 3em 0;
+  background: url("https://img.freepik.com/free-vector/elegant-white-background-with-shiny-lines_1017-17580.jpg?size=626&ext=jpg&ga=GA1.2.2037429681.1628812800");
+  background-size: cover;
+  border-bottom: 2px solid black;
+}
+
+.sponsors h2 {
+  font-weight: 100;
+  text-align: center;
+  font-size: clamp(1rem, 4vw, 2.5rem);
+  -webkit-filter: blur(0.35px);
+          filter: blur(0.35px);
+  text-shadow: 0 0 1px black,0 0 2px black,0 0 4px black;
+}
+
+.sponsors h3 {
+  text-align: center;
+  font-size: clamp(0.7rem, 3vw, 1.5rem);
+  font-weight: 100;
+  -webkit-filter: blur(0.2px);
+          filter: blur(0.2px);
+  text-shadow: 0 0 .3px black,0 0 .6px black,0 0 1px black;
+}
+
+.sponsors article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 10vw;
+  margin: 1em 0;
+}
+
+.sponsors article img {
+  width: 10%;
+}

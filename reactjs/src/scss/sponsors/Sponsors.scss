@@ -1,0 +1,34 @@
+@import '../config';
+
+.sponsors{
+   padding:2em 0 3em 0;
+   background: url('https://img.freepik.com/free-vector/elegant-white-background-with-shiny-lines_1017-17580.jpg?size=626&ext=jpg&ga=GA1.2.2037429681.1628812800');
+   background-size: cover;
+   border-bottom: 2px solid black;
+
+   h2{
+      font-weight: 100;
+      text-align: center;
+      font-size: clamp(1rem,4vw,2.5rem);
+      filter: blur(.35px);
+      text-shadow: 0 0 1px black,0 0 2px black,0 0 4px black;
+   }
+
+   h3{
+      text-align: center;
+      font-size:clamp(.7rem,3vw,1.5rem);
+      font-weight: 100;
+      filter: blur(.2px);
+      text-shadow: 0 0 .3px black,0 0 .6px black,0 0 1px black;
+   }
+
+   article{
+      @include flex-sa-c;
+      height:10vw;
+      margin:1em 0;
+
+      img{
+         width: 10%;
+      }
+   }
+}
